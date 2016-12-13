@@ -1,0 +1,20 @@
+<html ng-app="app">
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body ng-controller="ctrl">
+        <div class="add-stuff">
+            <input type="text" placeholder="Add New Quote Here" class="quote-box" ng-model="Q">
+            <input type="text" placeholder="Author" class="quote-box" ng-model="A">
+            <button ng-click="(add(Q, A))">+</button>
+        </div>
+        <p>Click the quote to remove it.</p>
+        <div ng-repeat="quote in get" class="quote-box h" ng-click="setSelected($index)">
+            <span>"</span>{{quote.text}}<span>"</span><span class="auth">{{quote.author}}</span>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="controller.js"></script>
+        <script type="text/javascript" src="service.js"></script>
+    </body>
+</html>
